@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECNOEDU - Tecnología en la educación</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO */
+header {
+    background: #050505;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 3px solid #b91c1c;
+}
+
+header h1 {
+    color: #ef4444;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+header p {
+    color: #d4d4d4;
+    margin-top: 10px;
+}
+
+/* MENU */
+nav {
+    background: #171717;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #7f1d1d;
+}
+
+nav a {
+    background: #991b1b;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.activo {
+    background: #ef4444;
+    color: white;
+}
+
+/* INICIO */
+.inicio {
+    min-height: 440px;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #090909, #380b0b);
+}
+
+.inicio h2 {
+    font-size: 42px;
+    color: #ef4444;
+    margin-bottom: 20px;
+}
+
+.inicio p {
+    max-width: 850px;
+    margin: auto;
+    color: #e5e5e5;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    background: #991b1b;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    margin-top: 22px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton:hover {
+    background: #ef4444;
+}
+
+/* SECCIONES */
+section {
+    padding: 60px 25px;
+    text-align: center;
+    scroll-margin-top: 80px;
+}
+
+section:nth-child(even) {
+    background: #151515;
+}
+
+section h2 {
+    color: #ef4444;
+    font-size: 31px;
+    margin-bottom: 25px;
+}
+
+section p {
+    max-width: 850px;
+    margin: auto;
+    color: #d4d4d4;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* IMAGENES */
+.imagen {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 25px auto;
+    display: block;
+    border: 2px solid #991b1b;
+}
+
+/* TARJETAS */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.tarjeta {
+    background: #202020;
+    border: 1px solid #991b1b;
+    border-radius: 12px;
+    padding: 25px;
+    width: 270px;
+    transition: .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: #ef4444;
+    background: #2b1515;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: #ef4444;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    font-size: 15px;
+}
+
+/* ESTADISTICAS */
+.grafica {
+    max-width: 650px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.grafica p {
+    margin-top: 15px;
+}
+
+.barra-contenedor {
+    background: #333;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0 20px;
+}
+
+.barra {
+    height: 100%;
+    background: linear-gradient(90deg, #7f1d1d, #ef4444);
+    text-align: right;
+    padding-right: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+/* PIE */
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 30px;
+    color: #fca5a5;
+    border-top: 2px solid #991b1b;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* CELULARES */
+@media(max-width: 600px) {
+    .inicio h2 {
+        font-size: 30px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    .imagen {
+        height: 210px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+<header>
+    <h1>TECNOEDU</h1>
+    <p>La tecnología en la educación</p>
+</header>
+
+<!-- MENU DE 5 OPCIONES -->
+<nav>
+    <a href="#inicio" class="activo">Inicio</a>
+    <a href="#importancia">Importancia</a>
+    <a href="#herramientas">Herramientas</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#recursos">Recursos</a>
+</nav>
+
+<!-- 1. INICIO -->
+<div class="inicio" id="inicio">
+
+    <h2>¡Bienvenidos a TECNOEDU!</h2>
+
+    <p>
+        La tecnología se ha convertido en una parte importante
+        de nuestra vida diaria, especialmente en la educación.
+        Actualmente, los estudiantes pueden utilizar diferentes
+        herramientas digitales para investigar, aprender,
+        realizar tareas y comunicarse con sus profesores.
+
+        En esta página conoceremos cómo la tecnología ayuda
+        a mejorar la educación y cuáles son sus principales ventajas.
+    </p>
+
+    <a href="#importancia" class="boton">Comenzar</a>
+
+    <img class="imagen"
+    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000"
+    alt="Estudiantes aprendiendo en un salón de clases">
+
+</div>
+
+<!-- 2. IMPORTANCIA -->
+<section id="importancia">
+
+    <h2>Importancia de la tecnología en la educación</h2>
+
+    <p>
+        La tecnología es importante porque permite que los alumnos
+        tengan acceso a una gran cantidad de información y recursos
+        educativos. Gracias a internet y a los dispositivos
+        electrónicos, es posible aprender desde diferentes lugares
+        y consultar información sobre casi cualquier materia.
+
+        También ayuda a los profesores a explicar sus clases mediante
+        videos, presentaciones, imágenes y actividades digitales.
+    </p>
+
+    <img class="imagen"
+    src="https://images.unsplash.com/photo-150 classroom"
+    alt="Educación y tecnología"
+    onerror="this.style.display='none'">
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Acceso a información</h3>
+            <p>
+                Los estudiantes pueden consultar libros digitales,
+                investigaciones, artículos y materiales educativos.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Aprendizaje moderno</h3>
+            <p>
+                Las herramientas digitales hacen que las clases
+                sean más dinámicas y permiten utilizar diferentes
+                métodos de enseñanza.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 3. HERRAMIENTAS -->
+<section id="herramientas">
+
+    <h2>Herramientas tecnológicas</h2>
+
+    <p>
+        Existen diferentes dispositivos y plataformas que se utilizan
+        para facilitar las actividades escolares. Cada herramienta
+        tiene una función que ayuda a los estudiantes a desarrollar
+        sus conocimientos y habilidades.
+    </p>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+            alt="Computadora">
+
+            <h3>Computadoras</h3>
+
+            <p>
+                Sirven para realizar investigaciones, escribir
+                documentos, preparar presentaciones y desarrollar
+                trabajos escolares.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
+            alt="Internet y tecnología">
+
+            <h3>Internet</h3>
+
+            <p>
+                Permite buscar información, consultar libros,
+                ver videos educativos y comunicarse con otras
+                personas.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=600"
+            alt="Dispositivos móviles">
+
+            <h3>Tabletas y celulares</h3>
+
+            <p>
+                Permiten utilizar aplicaciones educativas,
+                leer documentos y realizar actividades
+                desde cualquier lugar.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 4. BENEFICIOS -->
+<section id="beneficios">
+
+    <h2>Beneficios de la tecnología</h2>
+
+    <p>
+        El uso adecuado de la tecnología puede mejorar la experiencia
+        educativa. Además de facilitar las tareas, permite que los
+        alumnos desarrollen habilidades que serán importantes
+        para su futuro académico y profesional.
+    </p>
+
+    <img class="imagen"
+    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000"
+    alt="Estudiantes trabajando en equipo">
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Fácil aprendizaje</h3>
+            <p>
+                Ayuda a comprender temas mediante videos,
+                imágenes y ejercicios interactivos.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Ahorro de tiempo</h3>
+            <p>
+                Permite encontrar información y realizar
+                actividades de manera más rápida.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Comunicación</h3>
+            <p>
+                Facilita el intercambio de información
+                entre profesores y estudiantes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Creatividad</h3>
+            <p>
+                Permite crear presentaciones, videos,
+                proyectos y diferentes trabajos escolares.
+            </p>
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:55px;">Uso de herramientas educativas</h2>
+
+    <p>
+        Los siguientes porcentajes son ejemplos ilustrativos
+        para representar el uso de diferentes herramientas.
+        No corresponden a una encuesta real.
+    </p>
+
+    <div class="grafica">
+
+        <p>Internet - 95%</p>
+        <div class="barra-contenedor">
+            <div class="barra" style="width:95%">95%</div>
+        </div>
+
+        <p>Computadoras - 85%</p>
+        <div class="barra-contenedor">
+            <div class="barra" style="width:85%">85%</div>
+        </div>
+
+        <p>Aplicaciones - 70%</p>
+        <div class="barra-contenedor">
+            <div class="barra" style="width:70%">70%</div>
+        </div>
+
+        <p>Plataformas digitales - 60%</p>
+        <div class="barra-contenedor">
+            <div class="barra" style="width:60%">60%</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 5. RECURSOS -->
+<section id="recursos">
+
+    <h2>Recursos educativos</h2>
+
+    <p>
+        Actualmente existen diferentes plataformas que permiten
+        aprender de manera gratuita o consultar información
+        para realizar investigaciones y trabajos escolares.
+    </p>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600"
+            alt="Estudio y aprendizaje">
+
+            <h3>Khan Academy</h3>
+
+            <p>
+                Es una plataforma educativa que ofrece cursos,
+                ejercicios y videos para aprender matemáticas,
+                ciencias y otras materias.
+            </p>
+
+            <a href="https://es.khanacademy.org/"
+            target="_blank" rel="noopener noreferrer" class="boton">
+                Visitar página
+            </a>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600"
+            alt="Libros de investigación">
+
+            <h3>Google Académico</h3>
+
+            <p>
+                Es un buscador que ayuda a encontrar artículos
+                científicos, investigaciones, libros y documentos
+                académicos.
+            </p>
+
+            <a href="https://scholar.google.com/"
+            target="_blank" rel="noopener noreferrer" class="boton">
+                Visitar página
+            </a>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600"
+            alt="Aprendizaje escolar">
+
+            <h3>Educaplay</h3>
+
+            <p>
+                Es una plataforma que permite crear y utilizar
+                actividades educativas, juegos, cuestionarios
+                y ejercicios interactivos.
+            </p>
+
+            <a href="https://www.educaplay.com/"
+            target="_blank" rel="noopener noreferrer" class="boton">
+                Visitar página
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PIE DE PAGINA -->
+<footer>
+
+    <p>© 2026 TECNOEDU | La tecnología en la educación</p>
+
+    <p>Aprender hoy para transformar el mañana.</p>
+
+</footer>
+
+<!-- MENU INTERACTIVO -->
+<script>
+
+const enlaces = document.querySelectorAll("nav a");
+
+enlaces.forEach(enlace => {
+
+    enlace.addEventListener("click", function() {
+
+        enlaces.forEach(item => {
+            item.classList.remove("activo");
+        });
+
+        this.classList.add("activo");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
